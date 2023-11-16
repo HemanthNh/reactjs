@@ -4,6 +4,7 @@ import Greeting from './Greeting';
 import Footer from './Footer';
 import Counter from './Counter';
 import ClassCounter from './ClassCounter';
+import LifecycleExample from './LifeCycleExample';
 function App() {
   return (
     <div className="App">
@@ -22,9 +23,10 @@ function App() {
         </a>
       </header> */}
       <Greeting></Greeting>
-      <Counter></Counter>
+      {/* <Counter></Counter> */}
+      {/* <ClassCounter></ClassCounter> */}
 
-      <ClassCounter></ClassCounter>
+      <LifecycleExample></LifecycleExample>
       <Footer></Footer>
     </div>
   );
