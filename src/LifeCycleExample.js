@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-class LifecycleExample extends React.Component {
+class LifecycleExample extends Component {
   constructor(props) {
     super(props);
     this.state = { count: 0 };
