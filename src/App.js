@@ -3,10 +3,14 @@ import logo from './logo.svg';
 import './App.css';
 import Greeting from './Greeting';
 import Footer from './Footer';
-import Counter from './Counter';
 import ClassCounter from './ClassCounter';
 import LifecycleExample from './LifeCycleExample';
 import ExampleComponent from './ExampleComponent';
+import ParentComponent from './ParentComponent';
+import ChildComponent from './ChildComponent';
+import CounterComponent from './CounterComponent';
+import Counter from './Counter';
+
 // function App() {
 //   return (
 //     <div className="App">
@@ -35,7 +39,7 @@ import ExampleComponent from './ExampleComponent';
 // }
 
 // export default App;
-
+// reconciliation
 
 class App extends React.Component {
   constructor(props){
@@ -57,6 +61,9 @@ class App extends React.Component {
       <button onClick={this.toggleComponent}>Toggle Component</button>
       <>{this.state.showComponent? "Show": "Hide"}</>
       {this.state.showComponent && <ExampleComponent/>}
+      <ChildComponent/>
+      {/* <CounterComponent></CounterComponent> */}
+      <Counter></Counter>
       </>
     )
   }
