@@ -10,6 +10,9 @@ import ParentComponent from './ParentComponent';
 import ChildComponent from './ChildComponent';
 import CounterComponent from './CounterComponent';
 import Counter from './Counter';
+import ComponentA from './ComponentA';
+import ContextExample from './ContextExample';
+import UseEffectExample from './UseEffectExample';
 
 // function App() {
 //   return (
@@ -64,6 +67,9 @@ class App extends React.Component {
       <ChildComponent/>
       {/* <CounterComponent></CounterComponent> */}
       <Counter></Counter>
+      <ComponentA/>
+      <ContextExample></ContextExample>
+      <UseEffectExample></UseEffectExample>
       </>
     )
   }
