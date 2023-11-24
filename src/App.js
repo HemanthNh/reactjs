@@ -13,6 +13,8 @@ import Counter from './Counter';
 import ComponentA from './ComponentA';
 import ContextExample from './ContextExample';
 import UseEffectExample from './UseEffectExample';
+import CustomHookExample from './CustomHookExample';
+import FocusInput from './FocusInput';
 
 // function App() {
 //   return (
@@ -69,7 +71,9 @@ class App extends React.Component {
       <Counter></Counter>
       <ComponentA/>
       <ContextExample></ContextExample>
-      <UseEffectExample></UseEffectExample>
+      {/* <UseEffectExample></UseEffectExample> */}
+      <CustomHookExample></CustomHookExample>
+      <FocusInput></FocusInput>
       </>
     )
   }

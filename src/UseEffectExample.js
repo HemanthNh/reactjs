@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 
 function UseEffectExample() {
     const [data, setData] = useState([]);
@@ -13,7 +13,7 @@ function UseEffectExample() {
 
     setTimeout(() => {
         setVar(20)
-    }, 5000);
+    }, 1000);
 
     return(
         <div>
