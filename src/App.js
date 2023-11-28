@@ -1,81 +1,66 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Greeting from './Greeting';
-import Footer from './Footer';
-import ClassCounter from './ClassCounter';
-import LifecycleExample from './LifeCycleExample';
-import ExampleComponent from './ExampleComponent';
-import ParentComponent from './ParentComponent';
-import ChildComponent from './ChildComponent';
-import CounterComponent from './CounterComponent';
-import Counter from './Counter';
-import ComponentA from './ComponentA';
-import ContextExample from './ContextExample';
-import UseEffectExample from './UseEffectExample';
-import CustomHookExample from './CustomHookExample';
-import FocusInput from './FocusInput';
+import React from "react";
+import { BrowserRouter as Router, Route, Link, Routes, useParams } from "react-router-dom";
+import Home from './Home';
+import About from './About';
 
-// function App() {
-//   return (
-//     <div className="App">
-//       {/* <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header> */}
-//       <Greeting></Greeting>
-//       {/* <Counter></Counter> */}
-//       {/* <ClassCounter></ClassCounter> */}
+function UserProfile(){
+  const myparams = useParams();
+  console.log('myparams',myparams)
+  const { username, age } = useParams(); 
 
-//       <LifecycleExample></LifecycleExample>
-//       <Footer></Footer>
-//     </div>
-//   );
-// }
-
-// export default App;
-// reconciliation
-
-class App extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      showComponent: true
-    };
-  }
-
-  toggleComponent = () => {
-    this.setState(prevState=> ({
-      showComponent: !prevState.showComponent
-    }))
-  }
-
-  render(){
-    return(
-      <>
-      <button onClick={this.toggleComponent}>Toggle Component</button>
-      <>{this.state.showComponent? "Show": "Hide"}</>
-      {this.state.showComponent && <ExampleComponent/>}
-      <ChildComponent/>
-      {/* <CounterComponent></CounterComponent> */}
-      <Counter></Counter>
-      <ComponentA/>
-      <ContextExample></ContextExample>
-      {/* <UseEffectExample></UseEffectExample> */}
-      <CustomHookExample></CustomHookExample>
-      <FocusInput></FocusInput>
-      </>
-    )
-  }
+  return <h2>Hi { username }. Your age is {age}</h2>
 }
+
+function App(){
+  return(
+    <Router>
+      <div>
+        <nav>
+          <ul> 
+            <li>
+              <Link to="/user/john">John's Profile</Link>
+            </li>
+            <li>
+              <Link to="/user/alice">Alice's Profile</Link>
+            </li>
+            
+          </ul>
+        </nav>
+        <Routes>
+          <Route path="/user/:username/:age" element={<UserProfile/>}/>
+        </Routes>
+      </div>
+    </Router>
+  )
+}
+
 export default App;
+
+
+
+// function App(){
+//   return(
+//     <Router>
+//       <div>
+//         <nav>
+//           <ul> 
+//             <li>
+//               <Link to="/home">Home</Link>
+//             </li>
+//             <li>
+//               <Link to="/contact">Contact</Link>
+//             </li>
+//             <li>
+//               <Link to="/about">About</Link>
+//             </li>
+//           </ul>
+//         </nav>
+//         <Routes>
+//           <Route path="/home" exact element={<Home/>}/>
+//           <Route path="/about" element={<About/>}/>
+//         </Routes>
+//       </div>
+//     </Router>
+//   )
+// }
