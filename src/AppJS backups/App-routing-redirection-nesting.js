@@ -2,7 +2,7 @@ import './App.css';
 import React from "react";
 import { BrowserRouter as Router, Route, Link, Routes, Navigate } 
 from "react-router-dom";
-import NotFound from './NotFound';
+import NotFound from '../NotFound';
 
 function Home(){
   return <h2>Home</h2>

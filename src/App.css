@@ -40,3 +40,17 @@
 h2 {
   color: yellowgreen;
 }
+
+.loading {
+  width: 500px;
+  height: 500px;
+  background-color: red;
+}
+
+.home-div {
+  background-color: chocolate;
+}
+
+.about-div {
+  background-color: chartreuse;
+}

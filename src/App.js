@@ -1,26 +1,12 @@
+import React, { lazy, Suspense } from "react";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom"; 
 import './App.css';
-import React from "react";
-import { BrowserRouter as Router, Route, Link, Routes, Navigate, Outlet } 
-from "react-router-dom";
 
-function Home(){
-  return <h2>Home</h2>
-}
+const Home = lazy(()=> import('./Home'))
+const About = lazy(()=> import('./About'))
+const ControlledForm = lazy(()=> import('./ControlledForm'))
 
-function Login(){
-  return <h2>Login</h2>
-}
-
-function Profile(){
-  return <h2>Profile</h2>
-}
-
-function ProtectedComponent(){
-  return <h2>Protected Component</h2>
-}
-
-function App() {
-  const isAuthenticated = false;
+function App(){
   return(
     <Router>
       <nav>
@@ -28,33 +14,26 @@ function App() {
           <li>
             <Link to="/">Home</Link>
           </li>
-          {isAuthenticated ? (
           <li>
-            <Link to="/protected">Protected</Link>
+            <Link to="/about">About</Link>
           </li>
-          ) : null}
+          <li>
+            <Link to="/controlled-form">Controlled Form</Link>
+          </li>
         </ul>
       </nav>
-      <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/login' element={<Login/>}/>
-        { isAuthenticated? (
-        <Route path='/protected' element={<Outlet/>}>
-          <Route index element={<ProtectedComponent/>} />
-          <Route path="profile" element={<Profile/>} />
-        </Route>
-        ) : (
-          <>
-          <Route path='/protected/*' element={<Navigate to="/login"/>}/>
-          {/* <Route path='/protected/profile' element={<Navigate to="/login"/>}/> */}
-          </>
-
-        )}
-      </Routes>
+      <div>
+      {/* suspended routes */}
+        <Suspense fallback={<div className="loading">Loading...</div>}> 
+          <Routes>
+            <Route path="/" element={<Home/>}></Route>
+            <Route path="/about" element={<About/>}></Route>
+            <Route path="/controlled-form" element={<ControlledForm/>}></Route>
+          </Routes>
+        </Suspense>
+      </div>
     </Router>
   )
 }
-
-// Protected Routes 
 
 export default App;

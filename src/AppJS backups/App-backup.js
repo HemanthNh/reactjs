@@ -1,20 +1,20 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Greeting from './Greeting';
-import Footer from './Footer';
-import ClassCounter from './ClassCounter';
-import LifecycleExample from './LifeCycleExample';
-import ExampleComponent from './ExampleComponent';
-import ParentComponent from './ParentComponent';
-import ChildComponent from './ChildComponent';
-import CounterComponent from './CounterComponent';
-import Counter from './Counter';
-import ComponentA from './ComponentA';
-import ContextExample from './ContextExample';
-import UseEffectExample from './UseEffectExample';
-import CustomHookExample from './CustomHookExample';
-import FocusInput from './FocusInput';
+import Greeting from '../Greeting';
+import Footer from '../Footer';
+import ClassCounter from '../ClassCounter';
+import LifecycleExample from '../LifeCycleExample';
+import ExampleComponent from '../ExampleComponent';
+import ParentComponent from '../ParentComponent';
+import ChildComponent from '../ChildComponent';
+import CounterComponent from '../CounterComponent';
+import Counter from '../Counter';
+import ComponentA from '../ComponentA';
+import ContextExample from '../ContextExample';
+import UseEffectExample from '../UseEffectExample';
+import CustomHookExample from '../CustomHookExample';
+import FocusInput from '../FocusInput';
 
 // function App() {
 //   return (

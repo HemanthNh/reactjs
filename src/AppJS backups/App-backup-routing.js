@@ -1,8 +1,8 @@
 import './App.css';
 import React from "react";
 import { BrowserRouter as Router, Route, Link, Routes, useParams } from "react-router-dom";
-import Home from './Home';
-import About from './About';
+import Home from '../Home';
+import About from '../About';
 
 function UserProfile(){
   const myparams = useParams();
