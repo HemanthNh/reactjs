@@ -17,6 +17,8 @@ export default function ControlledForm(){
     }
 
     return(
+        <>
+        <h2>Controlled Form</h2>
         <form onSubmit={handleSubmit}>
             <input type="text"
             name="username" 
@@ -30,5 +32,6 @@ export default function ControlledForm(){
             />
             <button type="submit">Submit</button>
         </form>
+        </>
     )
 }
